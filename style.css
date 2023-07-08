@@ -1,0 +1,295 @@
+/**-----Обнуление-----------------------------------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+}
+/**------БАЗОВЫЕ СТИЛИ-----------------------------------------------------------------------------*/
+body {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+section p {
+    margin-bottom: 30px;
+}
+section h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+figure {
+    width: 80%;
+    margin: 0 auto 30px;
+}
+figure img {
+    width: 100%;
+}
+figcaption {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    margin-top: 30px;
+}
+section ul,
+section ol {
+    margin-bottom: 30px;
+    list-style: none;
+}
+section ol {
+    counter-reset: ol 0;
+}
+section li {
+    margin-top: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+section li p {
+    margin-bottom: 0;
+}
+section ul li::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    background-color: #333;
+}
+section ol li::before {
+    counter-increment: ol 1;
+    content: counter(ol) ".";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-weight: bold;
+    color: #333;
+}
+/**------ШАПКА-------------------------------------------------------------------------------------*/
+.header {
+    background-image: url(img/header-bg.webp);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+.header:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.header--container {
+    padding: 19.5vw 10px 50px;
+}
+.header--title {
+    color: white;
+    font-size: 2.3em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+/**------НАВИГАЦИЯ-------------------------------------------------------------------------------------*/
+.nav {
+    margin-top: 30px;
+}
+.nav--body {
+    background-color: #f3f3f3;
+    padding: 20px 25px;
+}
+.nav--title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.nav--list {
+    list-style-position: inside;
+}
+.nav--item {
+    color: gray;
+    margin-bottom: 5px;
+}
+.nav--item:last-child {
+    margin-bottom: 0;
+}
+.nav--link {
+    color: black;
+    position: relative;
+    top: 0;
+    left: 10px;
+    transition: all 200ms;
+}
+.nav--link:hover {
+    color: #333333;
+}
+/**------СОДЕРЖАНИЕ-------------------------------------------------------------------------------------*/
+.intro {
+    margin-top: 30px;
+}
+.block1 li {
+    margin-top: 40px;
+    padding-left: 30px;
+    position: relative;
+}
+/**---------ПОДВАЛ------------------------------------------------------------------------------*/
+.footer {
+    background-color: #343c55;
+}
+.footer--container {
+    padding: 40px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer--link {
+    display: block;
+    color: white;
+    font-size: 0.9em;
+    transition: all 200ms;
+}
+.footer--link:hover {
+    color: #c4c4c4;
+}
+.footer--autor {
+    color: white;
+    font-size: 0.9em;
+}
+/**-----------------АДАПТИВ-----------------------------------------------------------------*/
+@media (max-width: 768px) {
+    figure {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    section p {
+        text-align: justify;
+    }
+}
+@media (max-width: 480px) {
+    figure img {
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+    section h2 {
+        text-align: center;
+    }
+    .footer--container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 20px 10px;
+    }
+}
+/**-----------Кнопка скролла наверх----------------------------------*/
+.btnTop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    transition: all 1s;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+}
+.btnTop--text {
+    display: block;
+    color: white;
+    font-size: 30px;
+}
+.btnTop.btnTop-active {
+    display: flex;
+    opacity: 1;
+    transition: all 1s;
+}
